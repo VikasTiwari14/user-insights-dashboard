@@ -59,7 +59,7 @@ export default function App() {
   }, [users, sortAsc]);
 
   return (
-    <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
+    <div style={{ padding: "20px", fontFamily: "sans-serif", backgroundColor: "#f4f4f4" }}>
       <h2>User Insights Dashboard</h2>
       <SearchBox onSearch={setSearch} />
       <StatusFilter onChange={setStatuses} />
