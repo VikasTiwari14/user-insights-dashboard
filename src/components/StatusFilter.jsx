@@ -19,6 +19,7 @@ export default function StatusFilter({ onChange }) {
         <label key={status} style={{ marginRight: "10px" }}>
           <input
             type="checkbox"
+            data-testid={`status-${status}`}
             checked={selected.includes(status)}
             onChange={() => toggleStatus(status)}
           />

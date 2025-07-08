@@ -11,7 +11,7 @@ export default function UserTable({ users, onToggleSort }) {
           <th onClick={onToggleSort} style={{ cursor: "pointer" }}>Last Login ⬍</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody data-testid="user-table-body">
         {users.map(user => (
           <tr key={user.id}>
             <td>{user.name}</td>

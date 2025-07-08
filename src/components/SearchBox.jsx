@@ -12,6 +12,7 @@ export default function SearchBox({ onSearch }) {
   return (
     <input
       type="text"
+      data-testid="search-input"
       placeholder="Search by name or email"
       value={input}
       onChange={(e) => setInput(e.target.value)}
