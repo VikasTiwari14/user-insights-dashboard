@@ -24,9 +24,10 @@ describe('App', () => {
       fireEvent.click(checkbox);
 
       await waitFor(() => {
-        expect(screen.getByText(/Alice/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Bob/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Alice/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Bob Smith/)).not.toBeInTheDocument();
         expect(screen.queryByText(/Charlie/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Bob Evans/)).toBeInTheDocument();
       });
     });
 
@@ -56,10 +57,10 @@ describe('App', () => {
 
     await waitFor(() => {
       const listItems = screen.getByTestId('user-table-body').querySelectorAll('tr');
-      expect(listItems[0].textContent).toContain('Charlie');
-      expect(listItems[1].textContent).toContain('Alice');
-      expect(listItems[2].textContent).toContain('Bob Evans');
+      expect(listItems[0].textContent).toContain('Bob Evans');
+      expect(listItems[1].textContent).toContain('Charlie');
       expect(listItems[2].textContent).toContain('Bob Smith');
+      expect(listItems[3].textContent).toContain('Alice');
     });
   });
 });
