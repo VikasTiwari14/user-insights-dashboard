@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:json": "vitest run --reporter=./json-reporter.js",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest run --coverage"
   },
